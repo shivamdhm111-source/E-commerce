@@ -1,0 +1,425 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+body{
+    background-color: rgb(246, 247, 248);
+}
+
+/* navbar section */
+
+.navbar{
+    height: 4%;
+    background-color: white;
+    padding: 10px;
+}
+
+.logo, .links, .search-bar, li{
+    display: inline-block;
+}
+
+.search-bar{
+    float: right;
+}
+
+.search-bar input{
+    background-color: rgba(0, 255, 255, 0.644);
+}
+
+.links ul a{
+    text-decoration: none;
+    color: black;
+    margin: 0 5%;
+}
+
+.links{
+    width: 27vw;
+    margin-left: 15%;
+}
+
+.search-bar input{
+    padding: 8px 0 8px 35px;
+    width: 20vw;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+}
+
+.search{
+    position: relative;
+    left: 32px;
+    top: 1px;
+}
+
+.heart, .cart, .user{
+    margin-left: 20px;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+/* container */
+
+.container{
+    width: 95%;
+    height: 50vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2% auto;
+    border-radius: 20px;
+}
+
+.card{
+    margin: 0 5vw;
+}
+
+.card .text{
+    display: inline-block;
+    /* margin-bottom: 20px; */
+    padding: 5px 10px ;
+    border-radius: 15px;
+    background-color: rgba(173, 204, 248);
+    color:rgb(25, 86, 167) ;
+}
+
+.card-title{
+    font-size: 50px;
+    font-weight: 750;
+    margin: 10px 0;
+}
+
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.329);
+    border-radius: 10px;
+    margin: 10px 10px 0 0;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.shopnow{
+    background-color: rgb(44, 106, 187);
+    color: white;
+}
+.lookbook{
+    background-color: white;
+    color: black;
+}
+
+/* category section */
+
+.card-image {
+    position: relative;
+    overflow: hidden;
+    height: 19rem;
+}
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    border-radius: 0 20px 20px 0;
+}
+.category-text h2 , .category-text a {
+    display: inline-block;
+    margin: 0px 40px;
+}
+
+.category-text a{
+    float: right;
+    margin-right: 40px;
+    text-decoration: none;
+}
+
+.category-card{
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 6rem;
+    margin: 25px 25px;
+    padding: 20px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.category-name{
+    text-align: center;
+}
+
+/* featured products section */
+
+.featured {
+    padding: 60px 40px;
+    background: #f8fafc;
+}
+
+.featured-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.featured-header h2 {
+    font-size: 26px;
+}
+
+.featured-header p {
+    color: #666;
+    margin-top: 5px;
+}
+
+.slider-buttons button {
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* Card */
+.product-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 15px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* Badges */
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+.badge.new {
+    background: #111;
+}
+
+.badge.sale {
+    background: #e53935;
+}
+
+/* Wishlist */
+.wishlist {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #fff;
+    padding: 6px 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Info */
+.product-info h4 {
+    margin: 8px 0 5px;
+    font-size: 16px;
+}
+
+.category {
+    font-size: 13px;
+    color: #777;
+}
+
+.rating {
+    color: #f5a623;
+    font-size: 14px;
+}
+
+.rating span {
+    color: #666;
+    font-size: 13px;
+}
+
+/* Price Row */
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.price del {
+    color: #999;
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+.cart-btn {
+    background: #1a73e8;
+    color: #fff;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* club join section */
+
+.club-join{
+    font-size: larger;
+    margin: 40px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(165, 146, 146);
+    color: white;
+    min-height: 20vh;
+    background-color: rgb(19, 127, 236);
+}
+
+.club-join div{
+    display: inline-block;
+    width: 45%;
+    margin: 20px ;
+}
+
+
+.club-join input{
+    padding: 10px 150px 10px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    /* opacity: 0.3; */
+    background-color: rgba(255, 255, 255, 0.384);
+    color: rgb(2, 2, 2);
+}
+
+.club-join button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(19, 127, 236);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.club-join p{
+    opacity: 0.9;
+}
+
+
+.club-text h2{
+    margin-bottom: 20px;
+}
+
+/* footer section */
+
+footer{
+    background-color: white;
+    min-height: 50vh;
+}
+footer li{
+    max-width: 24vw;
+}
+
+footer div,p{
+    display: inline-block;
+}
+
+/* .shopify{
+    margin: 20px 0 0 30px;
+} */
+
+footer ul{
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+}
+
+footer ul li{
+    margin: 10px 10px 10px 0;
+    color: rgba(128, 128, 128, 0.671);
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .search-bar {
+        width: 270px;
+    }
+
+    .search-bar i{
+    margin-left: 1px;
+    }
+    
+    .container{
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .links{
+        display: none;
+    }
+
+    .search-bar input{
+        width: 35vw;
+    }
+
+    .category-card{
+        margin-left: 15px;
+    }
+
+    .category h2 , .category a {
+        margin: 0px 20px;
+        display: inline-block;
+    }
+
+    .club-join{
+        padding: 10px;
+    }
+
+    .club-join .club-text, .club-join .club-input{
+        display: block;
+        width: 100%;
+        /* text-align: center; */
+    }
+
+    .club-input input{
+        width: 36%;
+        margin-bottom: 20px;
+    }
+
+
+}
