@@ -1,3 +1,7 @@
+<?php
+include './Assets/Database/dbconnect.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,15 +33,15 @@
         <h1>Welcome back</h1>
         <p class="subtitle">Please enter your details to access your orders.</p>
 
-        <form>
+        <form class="login-form" method="POST" action="/ecommerce-site/ecommerce/handles/login_handle.php">
             <div class="form-group">
                 <label>Email address</label>
-                <input type="email" placeholder="name@company.com">
+                <input type="email" name="email" placeholder="name@company.com">
             </div>
 
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" placeholder="••••••••">
+                <input type="password" name="password" placeholder="••••••••">
                 <a href="#" class="forgot">Forgot Password?</a>
             </div>
 

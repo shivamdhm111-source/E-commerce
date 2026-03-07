@@ -1,3 +1,7 @@
+<?php
+include './Assets/DataBase/dbconnect.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,36 +33,37 @@
     <h1>Create your account</h1>
     <p class="subtitle">Join us to get exclusive offers and track your orders.</p>
 
-    <form class="register-form">
+    <form class="register-form" method="POST" action="/ecommerce-site/ecommerce/handles/register_handle.php">
         <div class="row">
+            
             <div class="field">
                 <label>First Name</label>
-                <input type="text" placeholder="Jane">
+                <input type="text" name="firstname" placeholder="Jane" required>
             </div>
             <div class="field">
                 <label>Last Name</label>
-                <input type="text" placeholder="Doe">
+                <input type="text" name="lastname" placeholder="Doe" required>
             </div>
         </div>
 
         <div class="field">
             <label>Email Address</label>
-            <input type="email" placeholder="name@company.com">
+            <input type="email" name="email" placeholder="name@company.com" required>
         </div>
 
         <div class="field">
             <label>Password</label>
-            <input type="password" placeholder="••••••••">
+            <input type="password" name="password" placeholder="••••••••" required>
             <small>Must be at least 8 characters</small>
         </div>
 
         <div class="field">
             <label>Confirm Password</label>
-            <input type="password" placeholder="••••••••">
+            <input type="password" name="cpassword" placeholder="••••••••" required>
         </div>
 
         <div class="checkbox">
-            <input type="checkbox">
+            <input type="checkbox" required>
             <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</span>
         </div>
 

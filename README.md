@@ -43,17 +43,30 @@ cd ecommerce-site/ecommerce
 ### Step 4: Set Up Database
 
 1. Open **phpMyAdmin** by navigating to `http://localhost/phpmyadmin/`
-2. Create a new database for the project
-3. Import the database SQL file (if you have one) or create necessary tables
+2. Go to the **Import** tab
+3. Upload the SQL file located at: `Assets/Data Base/ecommerce_database.sql`
+4. Click **Import** to create the database and tables
+
+**The SQL file will automatically create:**
+- `users` table - for user accounts
+- `products` table - for product listings
+- `orders` table - for customer orders
+- `order_items` table - for items in each order
+- `cart` table - for shopping carts
+- `categories` table - for product categories
+- Sample product data
 
 ### Step 5: Configure Database Connection
 
-1. Update database credentials in your PHP files if needed
-2. Ensure the following are configured:
-   - Database host (usually `localhost`)
-   - Database name
-   - Database username (usually `root`)
-   - Database password (usually empty by default)
+The database connection is configured in: **`Assets/Data Base/dbconnect.php`**
+
+Default credentials:
+- Database host: `localhost`
+- Database name: `ecommerce`
+- Database username: `root`
+- Database password: (empty)
+
+If your credentials differ, update them in the `dbconnect.php` file.
 
 ### Step 6: Run the Application
 
@@ -68,16 +81,17 @@ cd ecommerce-site/ecommerce
 
 ```
 ecommerce/
-├── admin_page.php          # Admin dashboard
-├── cart.php                # Shopping cart
-├── checkout.php            # Checkout page
-├── home.php                # Homepage
-├── login.php               # User login
-├── product_details.php     # Product details
-├── product-page.php        # Product listing
-├── register.php            # User registration
+├── admin_page.php                          # Admin dashboard
+├── cart.php                                # Shopping cart
+├── checkout.php                            # Checkout page
+├── home.php                                # Homepage
+├── login.php                               # User login
+├── product_details.php                     # Product details
+├── product-page.php                        # Product listing
+├── register.php                            # User registration
+├── README.md                               # This file
 ├── Assets/
-│   ├── css/                # Stylesheets
+│   ├── css/                                # Stylesheets
 │   │   ├── admin_page.css
 │   │   ├── cart.css
 │   │   ├── checkout.css
@@ -86,32 +100,84 @@ ecommerce/
 │   │   ├── product_details.css
 │   │   ├── product-page.css
 │   │   └── register.css
-│   ├── images/             # Image assets
-│   └── js/                 # JavaScript files
-└── README.md               # This file
+│   ├── images/                             # Image assets
+│   ├── js/                                 # JavaScript files
+│   └── Data Base/
+│       ├── dbconnect.php                   # Database connection file
+│       └── ecommerce_database.sql          # Database setup SQL
+└── 
 ```
 
 ## Usage
 
 ### For Users
 
-1. **Home Page**: View product listings
-2. **Product Details**: Click on a product to see detailed information
-3. **Cart**: Add products to cart and review items
-4. **Checkout**: Complete your purchase
-5. **Login/Register**: Create an account or sign in
+1. **Register/Login**: Create an account or sign in at `login.php`
+2. **Home Page**: Browse and explore products
+3. **Product Details**: Click on a product to see detailed information
+4. **Cart**: Add products to cart and review items
+5. **Checkout**: Complete your purchase
+6. **Logout**: Click logout to end your session
 
 ### For Admin
 
-1. Navigate to the **Admin Page** (admin_page.php)
-2. Manage products, orders, and other store functions
+1. Navigate to **Admin Page** at `admin_page.php`
+2. Manage products, orders, and store settings
+
+## Database Tables
+
+### Users Table
+- `id` - User ID (Primary Key)
+- `first_name` - First name
+- `last_name` - Last name
+- `email` - Email address (Unique)
+- `password` - Hashed password
+- `phone` - Phone number
+- `address` - Shipping address
+- `city`, `zip_code`, `country` - Location info
+
+### Products Table
+- `id` - Product ID (Primary Key)
+- `name` - Product name
+- `description` - Product description
+- `price` - Product price
+- `stock` - Available stock
+- `category` - Product category
+- `image_url` - Product image URL
+
+### Orders Table
+- `id` - Order ID (Primary Key)
+- `user_id` - Reference to user
+- `total_amount` - Order total
+- `status` - Order status (pending, processing, shipped, delivered, cancelled)
+- `shipping_address` - Delivery address
+- `payment_method` - Payment method used
+
+### Cart Table
+- `id` - Cart item ID
+- `user_id` - Reference to user
+- `product_id` - Reference to product
+- `quantity` - Number of items
 
 ## Troubleshooting
 
-- **Page not found**: Ensure XAMPP is running and the file path is correct
-- **Database connection error**: Check database credentials in your PHP files
-- **CSS/Images not loading**: Verify the file paths in your HTML/CSS files
-- **Port conflicts**: If port 80 is in use, change the Apache port in XAMPP settings
+### Database Connection Error
+- Verify MySQL is running in XAMPP Control Panel
+- Check that the database exists in phpMyAdmin
+- Confirm credentials in `Assets/Data Base/dbconnect.php`
+
+### Page not found
+- Ensure XAMPP is running with Apache enabled
+- Verify the correct file path in your URL
+
+### CSS/Images not loading
+- Check that file paths in HTML/CSS match your project structure
+- Verify that the path `/ecommerce-site/ecommerce/` matches your folder location
+
+### Import SQL file error
+- Make sure the SQL file is not corrupted
+- Check that phpMyAdmin has proper permissions
+- Try creating the database manually and running the SQL queries
 
 ## Technologies Used
 
@@ -120,14 +186,6 @@ ecommerce/
 - **CSS**: Styling and layout
 - **JavaScript**: Frontend interactivity
 - **Apache**: Web server
-
-## Future Improvements
-
-- Add payment gateway integration
-- Implement order tracking
-- Add product reviews and ratings
-- Improve search functionality
-- Mobile responsiveness enhancements
 
 ## Contributing
 
